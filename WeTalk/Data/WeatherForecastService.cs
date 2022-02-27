@@ -16,5 +16,6 @@ namespace WeTalk.Data
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             }).ToArray());
         }
+        
     }
 }
