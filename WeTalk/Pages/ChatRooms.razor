@@ -1,0 +1,45 @@
+﻿@page "/chatroom"
+
+<PageTitle>Chat Room</PageTitle>
+
+@using WeTalk.Data
+
+
+<AuthorizeView>
+    <Authorized>
+        <div class="col-12">
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Create a Chat Room</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="list-group">
+            <a href="/chat/dotNet" class="list-group-item list-group-item-action align-items-center">
+                dot net
+            </a>
+            </div>
+            @* @foreach (var contact in ContactList)
+                {
+                <a href="/chat/dotNet" class = "list-group-item list-group-item-action flex-column align-items-start">
+                dot <span></span> net
+                </a>
+
+                }*@
+        </div>
+    </Authorized>
+</AuthorizeView>
+@code {
+    //private WeatherForecast[]? forecasts;
+    //private List<ChatRoom> ContactList { get; set; } = new List<ChatRoom>();
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    //    //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+
+    //    ContactList.Add(new ChatRoom(1, "Ben", "Dover"));
+    //    ContactList.Add(new ChatRoom(2, "Nick", "Dover"));
+    //    ContactList.Add(new ChatRoom(3, "Jen", "Dover"));
+    //    ContactList.Add(new ChatRoom(4, "Sam", "Dover"));
+    //}
+
+}
