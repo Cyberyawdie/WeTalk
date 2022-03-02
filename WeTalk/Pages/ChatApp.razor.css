@@ -6,12 +6,13 @@
 .card {
     background: #fff;
     transition: .5s;
-    border: 0;
+    border: 4px solid #eaeaea;
+    margin-top: 50px;
     margin-bottom: 30px;
     border-radius: .55rem;
     position: relative;
     width: 100%;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    /* box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 10%);*/
 }
 
 .chat-app .people-list {
@@ -24,59 +25,16 @@
 }
 
 .chat-app .chat {
-    margin-left: 280px;
-    border-left: 1px solid #eaeaea
+   
+    left: 0;
+    top: 0;
+    padding: 20px;
+   
 }
-
-.people-list {
-    -moz-transition: .5s;
-    -o-transition: .5s;
-    -webkit-transition: .5s;
-    transition: .5s
-}
-
-    .people-list .chat-list li {
-        padding: 10px 15px;
-        list-style: none;
-        border-radius: 3px
-    }
-
-        .people-list .chat-list li:hover {
-            background: #efefef;
-            cursor: pointer
-        }
-
-        .people-list .chat-list li.active {
-            background: #efefef
-        }
-
-        .people-list .chat-list li .name {
-            font-size: 15px
-        }
-
-    .people-list .chat-list img {
-        width: 45px;
-        border-radius: 50%
-    }
-
-    .people-list img {
-        float: left;
-        border-radius: 50%
-    }
-
-    .people-list .about {
-        float: left;
-        padding-left: 8px
-    }
-
-    .people-list .status {
-        color: #999;
-        font-size: 13px
-    }
 
 .chat .chat-header {
     padding: 15px 20px;
-    border-bottom: 2px solid #f4f7f6
+    border-bottom: 4px solid #f4f7f6
 }
 
     .chat .chat-header img {
@@ -92,7 +50,10 @@
 
 .chat .chat-history {
     padding: 20px;
-    border-bottom: 2px solid #fff
+    border-bottom: 2px solid #fff;
+    height: 300px;
+    overflow-x: auto;
+    scroll-behavior:auto;
 }
 
     .chat .chat-history ul {
@@ -211,33 +172,7 @@
     height: 0
 }
 
-@media only screen and (max-width: 767px) {
-    .chat-app .people-list {
-        height: 465px;
-        width: 100%;
-        overflow-x: auto;
-        background: #fff;
-        left: -400px;
-        display: none
-    }
 
-        .chat-app .people-list.open {
-            left: 0
-        }
-
-    .chat-app .chat {
-        margin: 0
-    }
-
-        .chat-app .chat .chat-header {
-            border-radius: 0.55rem 0.55rem 0 0
-        }
-
-    .chat-app .chat-history {
-        height: 300px;
-        overflow-x: auto
-    }
-}
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     .chat-app .chat-list {
