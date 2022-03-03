@@ -10,36 +10,39 @@
         <div class="col-12">
 
             <div class="input-group mb-3">                
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                <button><span class="input-group-text" id="inputGroup-sizing-default">Add a Chat Room</span></button>
+                <input @bind = "roomInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <button @onclick = "AddRoom" class="input-group-text" id="inputGroup-sizing-default">Add a Chat Room</button>
             </div>
             <div class="list-group">
-            <a href="/chat/dotNet" class="list-group-item list-group-item-action align-items-center">
+            @*<a href="/chat/dotNet" class="list-group-item list-group-item-action align-items-center">
                 dot net
-            </a>
-            </div>
-            @* @foreach (var contact in ContactList)
+            </a>*@
+            @foreach (var room in chatRooms)
                 {
-                <a href="/chat/dotNet" class = "list-group-item list-group-item-action flex-column align-items-start">
-                dot <span></span> net
+                <a href="/chat/@room.Room" class = "list-group-item list-group-item-action flex-column align-items-start">
+                @room.Room
                 </a>
-
-                }*@
+                }
+            </div>
+            
         </div>
     </Authorized>
 </AuthorizeView>
 @code {
+
+    private List<ChatRoomModel> chatRooms { get; set; } = new List<ChatRoomModel>();
    
-    //private List<ChatRoom> ContactList { get; set; } = new List<ChatRoom>();
+
+    private string? roomInput;
+    private void AddRoom()
+    {
+        
+        chatRooms.Add(new ChatRoomModel(roomInput));
+    }
+    
     //protected override async Task OnInitializedAsync()
     //{
-    //    forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    //    //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
-
-    //    ContactList.Add(new ChatRoom(1, "Ben", "Dover"));
-    //    ContactList.Add(new ChatRoom(2, "Nick", "Dover"));
-    //    ContactList.Add(new ChatRoom(3, "Jen", "Dover"));
-    //    ContactList.Add(new ChatRoom(4, "Sam", "Dover"));
+        
     //}
 
 }
